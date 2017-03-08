@@ -5,7 +5,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 	$tree_id = $_POST['tree_id'];
 
-	$sql = "SELECT * FROM review WHERE tree_id='".$tree_id."' ORDER BY review_no;";
+	$sql = "SELECT * FROM review WHERE tree_id='".$tree_id."' ORDER BY reviewed_on;";
 
 
 	if($r = mysqli_query($con,$sql)){
@@ -18,6 +18,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 				"review_text"=>$row['review_text'],
 				"username"=>$row['reviewed_by'],
 				"reviewed_on"=>$row['reviewed_on'],
+				"review_stars"=>$row['review_stars'],
 				"title"=>$row['title']
 			)
 		);
