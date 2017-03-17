@@ -1,6 +1,6 @@
 <?php
 if($_SERVER['REQUEST_METHOD']=='POST'){
-
+ 
 	require_once('dbConnect.php');
 
 	$username = $_POST['username'];

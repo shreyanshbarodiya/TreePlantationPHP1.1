@@ -68,3 +68,12 @@ create table adopts
 	foreign key (tree_id) references tree(tree_id) on delete cascade,
 	foreign key (adopted_by) references user(username) on delete cascade
 );
+
+create table devices
+(
+	username 				varchar(50),
+	token 					varchar(400),
+
+	primary key (username, token),
+	foreign key (username) references user(username) on delete cascade
+);
