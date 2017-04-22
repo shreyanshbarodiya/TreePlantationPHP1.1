@@ -83,4 +83,16 @@ class DbOperation
         $result = $stmt->get_result();
         return $result; 
     }
+
+    //remove given device of the given user
+    public function removeDeviceOfUser($username, $token){
+        $stmt = $this->con->prepare("DELETE FROM devices WHERE username = ? and token = ?");
+        $stmt->bind_param("ss",$username,$token);
+        if($stmt->execute()){
+            return 0; //return 0 means success    
+        }else{
+            return -1; //return -1 means failure
+        }
+    }
+
 }
