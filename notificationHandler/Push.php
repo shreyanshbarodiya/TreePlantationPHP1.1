@@ -10,7 +10,6 @@ class Push {
     //notification image url 
     private $image;
 
-    //initializing values in this constructor
     function __construct($title, $message, $image) {
          $this->title = $title;
          $this->message = $message; 

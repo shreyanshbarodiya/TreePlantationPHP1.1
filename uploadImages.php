@@ -28,7 +28,8 @@
 
 				$decoded = base64_decode($imagestring);
 				
-				$actualpath = "$server_path"."$path";
+				// $actualpath = "$server_path"."$path";
+				$actualpath = "$path";
 
 				if(file_put_contents($path,$decoded)){
 					$image_upload_query = "INSERT INTO image (tree_id, directory_id, image_url) VALUES ('$tree_id', '$directory_id', '$actualpath' );";

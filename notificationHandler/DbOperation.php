@@ -2,20 +2,14 @@
 
 class DbOperation
 {
-    //Database connection link
     private $con;
 
-    //Class constructor
     function __construct()
     {
-        //Getting the DbConnect.php file
         require_once dirname(__FILE__) . '/DbConnect.php';
 
-        //Creating a DbConnect object to connect to the database
         $db = new DbConnect();
 
-        //Initializing our connection link of this class
-        //by calling the method connect of DbConnect class
         $this->con = $db->connect();
     }
 
@@ -25,8 +19,8 @@ class DbOperation
             $stmt = $this->con->prepare("INSERT INTO devices (username, token) VALUES (?,?) ");
             $stmt->bind_param("ss",$username,$token);
             if($stmt->execute())
-                return 0; //return 0 means success
-            return 1; //return 1 means failure
+                return 0; //success
+            return 1; // failure
         }else{    
             return 2; //returning 2 means username already exist
         }

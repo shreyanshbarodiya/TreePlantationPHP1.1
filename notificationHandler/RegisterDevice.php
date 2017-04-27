@@ -9,7 +9,6 @@
 
 		$db = new DbOperation(); 
 		$result = $db->registerDevice($username,$token);
-		echo "hi";
 
 		if($result == 0){
 			$response['error'] = false; 
@@ -27,4 +26,3 @@
 	}
 
 	echo json_encode($response);
-	//echo "outside hi";

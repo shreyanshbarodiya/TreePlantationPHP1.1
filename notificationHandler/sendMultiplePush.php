@@ -43,7 +43,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		//getting the tokens from database object  
 		$devicetoken = $db->getAllTokensOfTreeOwner($tree_id);
 
-		//creating firebase class object 
 		$firebase = new Firebase(); 
 
 		echo $firebase->send($devicetoken, $mPushNotification);
